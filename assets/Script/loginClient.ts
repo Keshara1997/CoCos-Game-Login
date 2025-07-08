@@ -22,7 +22,6 @@ export class loginClient extends Component {
     start() {
         this._init();
         console.log("loginClient start");
-
     }
 
     update(deltaTime: number) {

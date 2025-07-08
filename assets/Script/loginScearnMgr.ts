@@ -9,9 +9,7 @@ export class loginScearnMgr extends Component {
     public my_EditBox: Node
 
     start() {
-
         globalThis.eventTarget.on("login_success", this.onLoginSuccess, this);
-
     }
 
     update(deltaTime: number) {
@@ -19,12 +17,22 @@ export class loginScearnMgr extends Component {
     }
 
 
+
+    public onClickSignUp() {
+        console.log("onClickSignUp")
+
+        director.loadScene("SignUp");
+    }
+
+
+
     public onClickLogin() {
 
         let str = this.my_EditBox.getComponent(EditBox).string
+        let password = this.my_EditBox.getComponent(EditBox).string
         console.log(typeof str)
         console.log("onClickLogin", str);
-        globalThis._loginScearnMgr._sendMessage("login", { userId: str });
+        globalThis._loginScearnMgr._sendMessage("login", { userId: str, password: password });
     }
 
     public onLoginSuccess(data: any) {

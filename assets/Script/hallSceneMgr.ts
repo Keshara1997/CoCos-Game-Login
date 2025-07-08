@@ -18,13 +18,22 @@ export class hallSceneMgr extends Component {
     }
 
     update(deltaTime: number) {
-        
+
     }
 
     public _init() {
         this.userName.string = globalThis._userInfo.userName;
         this.userID.string = 'Id : ' + globalThis._userInfo.userId.toString();
     }
+
+
+    public onCreateRoombtnClicket() {
+        console.log('Create Room button clicked');
+    }
+
+
+
+
 }
 
 
